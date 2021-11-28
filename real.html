@@ -31,10 +31,6 @@
       left: 0;
     }
 
-    .home:hover {
-      animation: toLeft 0.5s ease-in forwards;
-    }
-
     @keyframes toTop {
       100% {
         transform: translateY(-100%);
@@ -59,11 +55,6 @@
       }
     }
 
-    .portfolio:hover {
-      animation: toBottom 0.5s ease-in forwards;
-    }
-
-
     .portfolio {
       width: 350px;
       height: 350px;
@@ -71,8 +62,6 @@
       position: relative;
       top: -100%;
       left: 100%;
-
-      /* transform: translate(100%, -100%); */
     }
 
     .contact {
@@ -82,9 +71,6 @@
       position: relative;
       top: -200%;
       left: 200%;
-
-      /* transform: translate(200%, -200%); */
-
     }
 
     .about {
@@ -94,26 +80,52 @@
       position: relative;
       top: -300%;
       left: 300%;
-
-
-      /* transform: translate(300%, -300%); */
-
     }
 
     .hover-me {
       position: absolute;
-      width: 40px;
-      height: 40px;
+      width: 10rem;
       background-color: darkgray;
-      top: 100px;
+      top: 10px;
       left: 300px;
     }
   </style>
+  <script>
+    window.onhashchange = (e) => {
+      switch (location.hash) {
+        case "#portfolio": {
+          document.querySelector(".home").style.animation = "toTop 1s ease forwards";
+          document.querySelector(".portfolio").style.animation = "toLeft 1s ease forwards"
+          document.querySelector(".contact").style.animation = "toLeft 1s ease forwards"
+          document.querySelector(".about").style.animation = "toLeft 1s ease forwards"
+        }
+        break;
+
+      case "#contact": {
+        // document.querySelector(".home").style.animation = "toTop 1s ease forwards";
+        // document.querySelector(".portfolio").style.animation = "toTop 1s ease forwards"
+        // document.querySelector(".contact").style.animation = "toLeft 1s ease forwards"
+        // document.querySelector(".contact").style.animation = "toLeft 1s ease forwards"
+        // document.querySelector(".about").style.animation = "toLeft 1s ease forwards"
+        // document.querySelector(".about").style.animation = "toLeft 1s ease forwards"
+      }
+      break;
+
+      default:
+        break;
+      }
+    }
+  </script>
 </head>
 
 <body>
   <div class="hover-me">
-
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">portfolio</a></li>
+      <li><a href="#contact">contact</a></li>
+      <li><a href="#about">about</a></li>
+    </ul>
   </div>
 
   <div class="parent">
