@@ -24,6 +24,7 @@
     }
 
     .home {
+      transition: all 1s;
       width: 350px;
       height: 350px;
       background-color: rgba(128, 255, 0, 0.404);
@@ -57,6 +58,7 @@
     }
 
     .portfolio {
+      transition: all 1s;
       width: 350px;
       height: 350px;
       background-color: chocolate;
@@ -66,6 +68,7 @@
     }
 
     .contact {
+      transition: all 1s;
       background-color: cornflowerblue;
       width: 350px;
       height: 350px;
@@ -75,6 +78,7 @@
     }
 
     .about {
+      transition: all 1s;
       background-color: darkgoldenrod;
       width: 350px;
       height: 350px;
@@ -94,22 +98,39 @@
   <script>
     window.onhashchange = (e) => {
       switch (location.hash) {
+        case "#home": {
+          document.querySelector(".home").style.transform = "translateY(0)";
+          document.querySelector(".portfolio").style.transform = "translateX(0)"
+          document.querySelector(".contact").style.transform = "translateX(0)"
+          document.querySelector(".about").style.transform = "translateX(0)"
+        }
         case "#portfolio": {
-          document.querySelector(".home").style.animation = "toTop 1s ease forwards";
-          document.querySelector(".portfolio").style.animation = "toLeft 1s ease forwards"
-          document.querySelector(".contact").style.animation = "toLeft 1s ease forwards"
-          document.querySelector(".about").style.animation = "toLeft 1s ease forwards"
+          // document.querySelector(".home").style.animation = "toTop 1s ease forwards";
+          // document.querySelector(".portfolio").style.animation = "toLeft 1s ease forwards"
+          // document.querySelector(".contact").style.animation = "toLeft 1s ease forwards"
+          // document.querySelector(".about").style.animation = "toLeft 1s ease forwards"
+          document.querySelector(".home").style.transform = "translateY(-100%)";
+          document.querySelector(".portfolio").style.transform = "translateX(-100%)"
+          document.querySelector(".contact").style.transform = "translateX(-100%)"
+          document.querySelector(".about").style.transform = "translateX(-100%)"
+
         }
         break;
 
       case "#contact": {
-        // document.querySelector(".home").style.animation = "toTop 1s ease forwards";
-        // document.querySelector(".portfolio").style.animation = "toTop 1s ease forwards"
-        // document.querySelector(".contact").style.animation = "toLeft 1s ease forwards"
-        // document.querySelector(".contact").style.animation = "toLeft 1s ease forwards"
-        // document.querySelector(".about").style.animation = "toLeft 1s ease forwards"
-        // document.querySelector(".about").style.animation = "toLeft 1s ease forwards"
-        // night code
+        document.querySelector(".home").style.transform = "translateY(-200%)";
+        document.querySelector(".portfolio").style.transform = "translateX(-200%)"
+        document.querySelector(".contact").style.transform = "translateX(-200%)"
+        document.querySelector(".about").style.transform = "translateX(-200%)"
+
+      }
+      break;
+      case "#about": {
+        document.querySelector(".home").style.transform = "translateY(-300%)";
+        document.querySelector(".portfolio").style.transform = "translateX(-300%)"
+        document.querySelector(".contact").style.transform = "translateX(-300%)"
+        document.querySelector(".about").style.transform = "translateX(-300%)"
+
       }
       break;
 
@@ -123,7 +144,7 @@
 <body>
   <div class="hover-me">
     <ul>
-      <li><a href="/">Home</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#portfolio">portfolio</a></li>
       <li><a href="#contact">contact</a></li>
       <li><a href="#about">about</a></li>
