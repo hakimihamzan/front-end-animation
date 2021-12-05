@@ -20,17 +20,26 @@
       width: 350px;
       height: 350px;
       border: 10px solid cadetblue;
-      position: relative;
+      min-width: 0;
+      min-height: 0;
+      /* overflow: hidden; */
+      /* position: relative; */
+      display: flex;
     }
 
     .home {
       transition: all 1s;
-      width: 350px;
+      width: 650px;
       height: 350px;
+      min-width: 0;
+      min-height: 0;
+      /* overflow: hidden; */
+
       background-color: rgba(128, 255, 0, 0.404);
-      position: relative;
+      flex-grow: 5;
+      /* position: relative;
       top: 0;
-      left: 0;
+      left: 0; */
     }
 
     @keyframes toTop {
@@ -60,31 +69,36 @@
     .portfolio {
       transition: all 1s;
       width: 350px;
-      height: 350px;
+      /* height: 350px; */
       background-color: chocolate;
-      position: relative;
+      /* flex-grow: 1; */
+
+      /* position: relative;
       top: -100%;
-      left: 100%;
+      left: 100%; */
     }
 
     .contact {
       transition: all 1s;
       background-color: cornflowerblue;
-      width: 350px;
+      /* width: 350px; */
       height: 350px;
-      position: relative;
+      /* flex-grow: 1; */
+
+      /* position: relative;
       top: -200%;
-      left: 200%;
+      left: 200%; */
     }
 
     .about {
       transition: all 1s;
       background-color: darkgoldenrod;
-      width: 350px;
+      /* width: 350px; */
       height: 350px;
-      position: relative;
+
+      /* position: relative;
       top: -300%;
-      left: 300%;
+      left: 300%; */
     }
 
     .hover-me {
@@ -92,44 +106,49 @@
       width: 10rem;
       background-color: darkgray;
       top: 10px;
-      left: 300px;
+      left: 100px;
     }
   </style>
   <script>
     window.onhashchange = (e) => {
       switch (location.hash) {
         case "#home": {
-          document.querySelector(".home").style.transform = "translateY(0)";
-          document.querySelector(".portfolio").style.transform = "translateX(0)"
-          document.querySelector(".contact").style.transform = "translateX(0)"
-          document.querySelector(".about").style.transform = "translateX(0)"
+          // document.querySelector(".home").style.transform = "translateY(100%)";
+          // document.querySelector(".portfolio").style.transform = "translateX(100%)"
+          // document.querySelector(".contact").style.transform = "translateX(100%)"
+          // document.querySelector(".about").style.transform = "translateX(100%)"
+          // document.querySelector(".home").style.transform = "translate(100%)";
+          // document.querySelector(".portfolio").style.transform = "translate(100%)"
+          // document.querySelector(".contact").style.transform = "translate(100%)"
+          // document.querySelector(".about").style.transform = "translate(100%)"
         }
         case "#portfolio": {
           // document.querySelector(".home").style.animation = "toTop 1s ease forwards";
           // document.querySelector(".portfolio").style.animation = "toLeft 1s ease forwards"
           // document.querySelector(".contact").style.animation = "toLeft 1s ease forwards"
           // document.querySelector(".about").style.animation = "toLeft 1s ease forwards"
-          document.querySelector(".home").style.transform = "translateY(-100%)";
-          document.querySelector(".portfolio").style.transform = "translateX(-100%)"
-          document.querySelector(".contact").style.transform = "translateX(-100%)"
-          document.querySelector(".about").style.transform = "translateX(-100%)"
+
+          // document.querySelector(".home").style.transform = "translate(-100%)";
+          // document.querySelector(".portfolio").style.transform = "translate(-100%)"
+          // document.querySelector(".contact").style.transform = "translate(-100%)"
+          // document.querySelector(".about").style.transform = "translate(-100%)"
 
         }
         break;
 
       case "#contact": {
-        document.querySelector(".home").style.transform = "translateY(-200%)";
-        document.querySelector(".portfolio").style.transform = "translateX(-200%)"
-        document.querySelector(".contact").style.transform = "translateX(-200%)"
-        document.querySelector(".about").style.transform = "translateX(-200%)"
+        // document.querySelector(".home").style.transform = "translateY(-200%)";
+        // document.querySelector(".portfolio").style.transform = "translateX(-200%)"
+        // document.querySelector(".contact").style.transform = "translateX(-200%)"
+        // document.querySelector(".about").style.transform = "translateX(-200%)"
 
       }
       break;
       case "#about": {
-        document.querySelector(".home").style.transform = "translateY(-300%)";
-        document.querySelector(".portfolio").style.transform = "translateX(-300%)"
-        document.querySelector(".contact").style.transform = "translateX(-300%)"
-        document.querySelector(".about").style.transform = "translateX(-300%)"
+        // document.querySelector(".home").style.transform = "translateY(-300%)";
+        // document.querySelector(".portfolio").style.transform = "translateX(-300%)"
+        // document.querySelector(".contact").style.transform = "translateX(-300%)"
+        // document.querySelector(".about").style.transform = "translateX(-300%)"
 
       }
       break;
